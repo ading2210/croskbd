@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+clean:
+	make clean
+
+build:
+	make all
+
+binary:
+	make install DESTDIR=debian/croskbd PREFIX=/usr
+	make install_systemd DESTDIR=debian/croskbd PREFIX=/usr
+	dh_prep
+	dh_installchangelogs
+	dh_installdocs
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_shlibdeps
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
