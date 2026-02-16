@@ -3,7 +3,8 @@ build/
 debian/croskbd
 debian/files
 
-.debhelper
+debhelper-build-stamp
+*.debhelper
 *.deb
 *.dsc
 *.build
